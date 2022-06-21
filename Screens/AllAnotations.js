@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native"; /*1*/
 import {
   KeyboardAvoidingView,
   StyleSheet,
@@ -42,15 +43,19 @@ export default function AllAnotations() {
     setDates(date + "/" + month + "/" + year);
   }, []);
 
+  const navigation = useNavigation(); /*1*/
+
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Tags")}
+      ></TouchableOpacity>
       {/*Titulos*/}
-{/*       <View style={styles.Lista}>
+      {/*       <View style={styles.Lista}>
         <Text style={styles.Titles}>Unclasifiqued</Text>
         <Text style={styles.Titles}>All Anotations</Text>
         <Text style={styles.Titles}>Classes</Text>
       </View> */}
-
       <ScrollView
         contentContainerStyle={{
           flexGrow: 1,
@@ -69,6 +74,7 @@ export default function AllAnotations() {
               </TouchableOpacity>
             );
           })}
+          <View></View>
         </View>
       </ScrollView>
 
@@ -99,6 +105,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#E8E6ED",
     /*     alignItems: 'center',
     justifyContent: 'center', */
+  },
+  header: {
+    marginTop: 50,
+    backgroundColor: "#ddd",
+    height: 100,
+    width: 122,
   },
   Lista: {
     padding: 25,
