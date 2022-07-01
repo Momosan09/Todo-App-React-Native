@@ -1,9 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native"; /*1*/
+
 
 import YourTags from "../components/YourTags";
 
+
 export default function TagsScreen() {
+  
   return (
     <View>
       <View style={styles.HeaderContainer}>

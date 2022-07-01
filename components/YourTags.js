@@ -23,7 +23,7 @@ const YourTags = (props) => {
           </View>
           <View>
             <Text style={styles.Header}>Create Tag</Text>
-                <TextInput placeholder="Nombre" value={tags}></TextInput>
+{/*                 <TextInput placeholder="Nombre" value={tags}></TextInput> */}
           </View>
         </TouchableOpacity>
       </View>

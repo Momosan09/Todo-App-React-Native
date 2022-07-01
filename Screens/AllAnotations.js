@@ -43,13 +43,13 @@ export default function AllAnotations() {
     setDates(date + "/" + month + "/" + year);
   }, []);
 
-  const navigation = useNavigation(); /*1*/
+/*   const navigation = useNavigation(); /*1*/ 
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Tags")}
-      ></TouchableOpacity>
+{/*       <TouchableOpacity
+        onPress={() => navigation.navigate("Tags")}>
+      </TouchableOpacity> */}
       {/*Titulos*/}
       {/*       <View style={styles.Lista}>
         <Text style={styles.Titles}>Unclasifiqued</Text>

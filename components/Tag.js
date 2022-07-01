@@ -3,7 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const Tags = (props)=>{
     return(
-        <Text>A Tag</Text>
+        <View>
+            <Text>A Tag</Text>
+        </View>
     );
 }
 const styles = StyleSheet.create({
