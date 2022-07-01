@@ -22,14 +22,12 @@ export default function AllAnotations() {
   const [dates, setDates] = useState("Some day");
 
   const handleAddTask = () => {
-    if(!task){
+    if (!task) {        //Para Task vacias
       console.log("\n");
       console.log("AllAnotations");
       console.log("El campo esta vacio - linea 93");
       console.log("Crea este log - linea 25");
-
-    }
-    else{
+    } else {
       Keyboard.dismiss();
       setTaskItems([...taskItems, task]);
       setTask(null);
@@ -39,8 +37,7 @@ export default function AllAnotations() {
   /*   Delete task */
   const completeTask = (index) => {
     let itemsCopy = [...taskItems];
-    itemsCopy.splice(index, 1);
-    setTaskItems(itemsCopy);
+    
   };
 
   /*Dias*/
@@ -52,11 +49,11 @@ export default function AllAnotations() {
     setDates(date + "/" + month + "/" + year);
   }, []);
 
-/*   const navigation = useNavigation(); /*1*/ 
+  /*   const navigation = useNavigation(); /*1*/
 
   return (
     <View style={styles.container}>
-{/*       <TouchableOpacity
+      {/*       <TouchableOpacity
         onPress={() => navigation.navigate("Tags")}>
       </TouchableOpacity> */}
       {/*Titulos*/}
