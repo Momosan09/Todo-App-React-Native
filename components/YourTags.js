@@ -9,14 +9,22 @@ import {
 } from "react-native";
 
 import Tags from "./Tag";
+import PickColor from "./PickColor";
 
 const YourTags = (props) => {
   const [tags, setTags] = useState();
   const [tagsItems, setTagsItems] = useState([]);
 
   const handleAddTag = () => {
-    setTagsItems([...tagsItems, tags]);
-    setTags(null);
+    if (!tags) {
+      console.log("\n");
+      console.log("YourTags");
+      console.log("El campo esta vacio - linea 49");
+      console.log("Crea este log - linea 18");
+    } else {
+      setTagsItems([...tagsItems, tags]);
+      setTags(null);
+    }
   };
 
   return (
@@ -38,13 +46,18 @@ const YourTags = (props) => {
             >
               <Text style={styles.Header}>Create Tag</Text>
               <TextInput
+                style={styles.addTagTextInput}
                 placeholder={"Nombre"}
                 value={tags}
                 onChangeText={(text) => setTags(text)}
               ></TextInput>
+              <PickColor />
               <View>
-                <TouchableOpacity onPress={() => handleAddTag()}>
-                  <Text>+</Text>
+                <TouchableOpacity
+                  style={styles.addTagButton}
+                  onPress={() => handleAddTag()}
+                >
+                  <Text style={styles.addTagButtonText}>+</Text>
                 </TouchableOpacity>
                 {/* boton agregar tag */}
               </View>
@@ -71,6 +84,22 @@ const styles = StyleSheet.create({
   Header: {
     fontSize: 20,
     fontWeight: "bold",
+  },
+  addTagButton: {
+    width: 20,
+    height: 20,
+    backgroundColor: "#000000",
+
+    alignItems: "center",
+  },
+  addTagButtonText: {
+    color: "#fcfcfc",
+  },
+  addTagTextInput: {
+    padding: 2,
+    borderWidth: 1,
+    borderColor: "#777",
+    borderRadius: 5,
   },
 });
 

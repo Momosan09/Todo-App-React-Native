@@ -22,9 +22,18 @@ export default function AllAnotations() {
   const [dates, setDates] = useState("Some day");
 
   const handleAddTask = () => {
-    Keyboard.dismiss();
-    setTaskItems([...taskItems, task]);
-    setTask(null);
+    if(!task){
+      console.log("\n");
+      console.log("AllAnotations");
+      console.log("El campo esta vacio - linea 93");
+      console.log("Crea este log - linea 25");
+
+    }
+    else{
+      Keyboard.dismiss();
+      setTaskItems([...taskItems, task]);
+      setTask(null);
+    }
   };
 
   /*   Delete task */
